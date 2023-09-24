@@ -26,7 +26,7 @@ namespace SharpUp.Checks
                 {
                     if (result["PathName"] != null)
                     {
-                        Match path = Regex.Match(result["PathName"].ToString(), @"^\W*([a-z]:\\.+?(\.exe|\.dll|\.sys))\W*", RegexOptions.IgnoreCase);
+                        Match path = Regex.Match(result["PathName"].ToString(), @"^\W*([a-z]:\\.+?(\.dll|\.exe|\.sys))\W*", RegexOptions.IgnoreCase);
                         String binaryPath = path.Groups[1].ToString();
 
                         if (CheckModifiableAccess(binaryPath))
